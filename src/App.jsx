@@ -1,26 +1,52 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import { Section, FeaturesGrid, Stats, CTA } from './components/Sections'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-[#0A0E27] text-white relative">
+      <Navbar />
+      <Hero />
+
+      <Section id="features" title="Features" bg="">
+        <FeaturesGrid />
+      </Section>
+
+      <Section id="statistics" title="Statistics">
+        <Stats />
+      </Section>
+
+      <Section id="cta" title="Experience Excellence">
+        <CTA />
+      </Section>
+
+      <footer className="border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-6 text-white/70">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div>
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 mb-3" />
+              <p className="max-w-sm">Ultra-premium digital craftsmanship. Minimal, futuristic, and obsessively refined.</p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-2">Company</h4>
+              <ul className="space-y-1 text-sm">
+                <li><a className="hover:text-white" href="#">About</a></li>
+                <li><a className="hover:text-white" href="#">Careers</a></li>
+                <li><a className="hover:text-white" href="#">Press</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-2">Resources</h4>
+              <ul className="space-y-1 text-sm">
+                <li><a className="hover:text-white" href="#">Docs</a></li>
+                <li><a className="hover:text-white" href="#">Support</a></li>
+                <li><a className="hover:text-white" href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 text-xs text-white/50">© {new Date().getFullYear()} Luxora. All rights reserved.</div>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
